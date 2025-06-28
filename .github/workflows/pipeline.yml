@@ -25,3 +25,9 @@ jobs:
           #!/bin/bash
 
           docker build -t anuragdocker218/mahakal:java-api .
+
+      - name: push to docker hub
+        run: |
+          #!/bin/bash
+
+          docker push anuragdocker218/mahakal:java-api
