@@ -1,0 +1,21 @@
+name: PIPELINE
+
+on:
+  push:
+    branches: [ "master" ]
+
+jobs:
+  build-docker-image:
+    
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: "master"
+      
+      - name: build the docker image
+        run: |
+          #!/bin/bash
+
+          docker build -t java-api .
